@@ -47,7 +47,7 @@ namespace ChainOfResponsability
             if ( paquete.MillasAcumuladas < 10000)
             {
                 paquete.Descuento = 0;
-                paquete.PrecioAPagar =paquete.PrecioAPagar;
+                paquete.PrecioAPagar = paquete.PrecioAPagar - (paquete.PrecioAPagar * (paquete.Descuento / 100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 1);
             }
             else if (successor != null)
@@ -64,7 +64,7 @@ namespace ChainOfResponsability
             if(paquete.MillasAcumuladas>10001 && paquete.MillasAcumuladas < 25000)
             {
                 paquete.Descuento = 5;
-                paquete.PrecioAPagar = paquete.PrecioAPagar-(paquete.Descuento/100);
+                paquete.PrecioAPagar = paquete.PrecioAPagar-(paquete.PrecioAPagar*(paquete.Descuento/100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 1.1);
             }
             else if (successor != null)
@@ -81,7 +81,7 @@ namespace ChainOfResponsability
             if (paquete.MillasAcumuladas > 25001 && paquete.MillasAcumuladas < 50000)
             {
                 paquete.Descuento = 10;
-                paquete.PrecioAPagar =paquete.PrecioAPagar - (paquete.Descuento / 100);
+                paquete.PrecioAPagar = paquete.PrecioAPagar - (paquete.PrecioAPagar * (paquete.Descuento / 100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 2);
             }
             else if (successor != null)
@@ -97,7 +97,7 @@ namespace ChainOfResponsability
             if (paquete.MillasAcumuladas > 50000)
             {
                 paquete.Descuento = 20;
-                paquete.PrecioAPagar =paquete.PrecioAPagar- (paquete.Descuento / 100);
+                paquete.PrecioAPagar = paquete.PrecioAPagar - (paquete.PrecioAPagar * (paquete.Descuento / 100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 3);
             }
             
