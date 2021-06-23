@@ -59,13 +59,20 @@ namespace ChainOfResponsability
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            //Cadena de sucesion
             normal.SetSuccessor(silver);
             silver.SetSuccessor(gold);
             gold.SetSuccessor(platinum);
+
+            //Asignar valores
             P.PrecioAPagar = Convert.ToDouble(textBox1.Text);
             P.MillasAcumuladas = Convert.ToDouble(textBox2.Text);
             P.MillasAAcumular = Convert.ToDouble(textBox3.Text);
+
+            //Iniciando la cadena
             normal.ProcessPaquete(P);
+
+            //Devolver los valores 
             textBox4.Text = P.Descuento.ToString();
             textBox5.Text = P.PrecioAPagar.ToString();
             textBox6.Text = P.MillasAAcumular.ToString();

@@ -17,7 +17,7 @@ namespace ChainOfResponsability
         {
         }
 
-        public Paquete(int descuento, int millasAAcumular, double precioAPagar, double millasAcumuladas)
+        public Paquete(double descuento, double millasAAcumular, double precioAPagar, double millasAcumuladas)
         {
             this.Descuento = descuento;
             this.MillasAAcumular = millasAAcumular;
@@ -49,6 +49,7 @@ namespace ChainOfResponsability
                 paquete.Descuento = 0;
                 paquete.PrecioAPagar = paquete.PrecioAPagar - (paquete.PrecioAPagar * (paquete.Descuento / 100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 1);
+                paquete.MillasAAcumular = paquete.MillasAAcumular * 1;
             }
             else if (successor != null)
             {
@@ -66,6 +67,7 @@ namespace ChainOfResponsability
                 paquete.Descuento = 5;
                 paquete.PrecioAPagar = paquete.PrecioAPagar-(paquete.PrecioAPagar*(paquete.Descuento/100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 1.1);
+                paquete.MillasAAcumular = paquete.MillasAAcumular * 1.1;
             }
             else if (successor != null)
             {
@@ -83,6 +85,7 @@ namespace ChainOfResponsability
                 paquete.Descuento = 10;
                 paquete.PrecioAPagar = paquete.PrecioAPagar - (paquete.PrecioAPagar * (paquete.Descuento / 100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 2);
+                paquete.MillasAAcumular = paquete.MillasAAcumular * 2;
             }
             else if (successor != null)
             {
@@ -99,6 +102,7 @@ namespace ChainOfResponsability
                 paquete.Descuento = 20;
                 paquete.PrecioAPagar = paquete.PrecioAPagar - (paquete.PrecioAPagar * (paquete.Descuento / 100));
                 paquete.MillasAcumuladas += (paquete.MillasAAcumular * 3);
+                paquete.MillasAAcumular = paquete.MillasAAcumular * 3;
             }
             
         }
