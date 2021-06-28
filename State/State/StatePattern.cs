@@ -15,6 +15,7 @@ namespace State
         public abstract void armar();
         public abstract void desarmar();
 
+    public abstract void reparar();
       
 
     }
@@ -50,8 +51,10 @@ namespace State
             return;
         }
 
-
-       
+        public override void reparar()
+        {
+            return;
+        }
     }
 
     public class Cerrado : State
@@ -81,6 +84,11 @@ namespace State
         }
 
         public override void desarmar()
+        {
+            return;
+        }
+
+        public override void reparar()
         {
             return;
         }
@@ -116,6 +124,11 @@ namespace State
         {
             miPuerta.changeState(new Cerrado(miPuerta));
         }
+
+        public override void reparar()
+        {
+            return;
+        }
     }
 
     public class Emergencia : State
@@ -148,7 +161,14 @@ namespace State
         {
             return;
         }
+
+        public override void reparar()
+        {
+            miPuerta.changeState(new Cerrado(miPuerta));
+        }
     }
+
+    
 
     public class Puerta
     {
@@ -160,7 +180,10 @@ namespace State
         public void cerrar() { State.cerrar();}
         public  void armar() { State.armar();}
         public  void desarmar() { State.desarmar();}
-
+        public void reparar()
+        {
+            State.reparar();
+        }
         public void changeState(State newState)
         {
             State = newState;

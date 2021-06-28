@@ -14,14 +14,12 @@ namespace State
     {
         Puerta p = new Puerta();
         
-        Abierto abierto = new Abierto();
-        Cerrado cerrado = new Cerrado();
-        Armada armada= new Armada();
-        Emergencia emergencia = new Emergencia();
+        
         public Form1()
         {
             InitializeComponent();
-            p.State = new Cerrado(p);
+           // p.State = new Cerrado(p);
+            p.changeState(new Cerrado(p));
             label2.Text = p.getState();
         }
 
@@ -59,6 +57,10 @@ namespace State
             if(radioButton4.Checked == true)
             {
                 p.desarmar();
+            }
+            if(radioButton5.Checked == true)
+            {
+                p.reparar();
             }
             label2.Text = p.getState();
         }
