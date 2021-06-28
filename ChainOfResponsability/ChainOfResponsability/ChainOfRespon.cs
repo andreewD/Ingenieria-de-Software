@@ -13,22 +13,7 @@ namespace ChainOfResponsability
         double precioAPagar;
         double millasAcumuladas;
 
-        public Paquete()
-        {
-        }
 
-        public Paquete(double descuento, double millasAAcumular, double precioAPagar, double millasAcumuladas)
-        {
-            this.Descuento = descuento;
-            this.MillasAAcumular = millasAAcumular;
-            this.PrecioAPagar = precioAPagar;
-            this.MillasAcumuladas = millasAcumuladas;
-        }
-
-        public double Descuento { get => descuento; set => descuento = value; }
-        public double MillasAAcumular { get => millasAAcumular; set => millasAAcumular = value; }
-        public double PrecioAPagar { get => precioAPagar; set => precioAPagar = value; }
-        public double MillasAcumuladas { get => millasAcumuladas; set => millasAcumuladas = value; }
     }
     public abstract class AbstractHandler
     {
